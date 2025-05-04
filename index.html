@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+    integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./css/style.css">
+   <link rel="stylesheet" href="script.js"
+  <title>Project</title>
+  <style>
+
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="container">
+            <div class="logo"><a href="#"><img src="./img/logo.png" alt="" ></a></div>
+        <div class="nav-links">
+          <ul class="nav-group">
+            <li class="nav-item"><a href="#"><i class="fas fa-home"></i></a></li>
+            <li class="nav-item"><a href=""><i class="fab fa-facebook-messenger"></i></a></li>
+            <li class="nav-item"><a href=""><i class="far fa-compass"></i></a></li>
+            <li class="nav-item"><a href=""><i class="far fa-heart"></i></a></li>
+            <li class="nav-item">
+              <div class="action">
+                <div class="profile" onclick="menuToggle()">
+                  <img src="data:image/png;base64,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" alt="user Avatar">
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </nav>
+  </header>
+  <main>
+    <div class="container">
+      <div class="col-9">
+        <div class="statuses">
+          <div class="status">
+            <div class="image">
+              <img src="https://thumbs.dreamstime.com/b/cute-girl-avatar-featuring-long-black-hair-styled-flat-design-smiling-wearing-shirt-embodying-youthful-371432328.jpg" alt="">
+            </div>
+          </div>
+          <div class="status">
+            <div class="image">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6tWkfCJfejkeaq78A0p6L5CZWFFVwxyz0DA&s" alt="">
+            </div>
+          </div>
+          <div class="status">
+            <div class="image">
+              <img src="https://img.freepik.com/premium-vector/avatar-profile-icon-flat-style-female-user-profile-vector-illustration-isolated-background-women-profile-sign-business-concept_157943-38866.jpg?semt=ais_hybrid&w=740" alt="">
+            </div>
+          </div>
+          <div class="status">
+            <div class="image">
+              <img src="https://img.freepik.com/premium-vector/character-avatar-isolated_729149-194801.jpg?semt=ais_hybrid&w=740" alt="">
+            </div>
+          </div>
+          <div class="status">
+            <div class="image">
+              <img src="https://img.freepik.com/premium-vector/user-icon-icon_1076610-59410.jpg?w=360" alt="">
+            </div>
+          </div>
+        </div>
+
+            
+          
+                      
+                    
+                  
+                
+              
+                
+            
+      
+        
+            
+            
+        
+        <div class="card">
+          <div class="top">
+            <div class="userDetails">
+              <div class="profilepic">
+                <div class="profile_img">
+                  <div class="image">
+                    <img src="https://cdn3.iconfinder.com/data/icons/avatars-business-human1/180/woman2-512.png" alt="">
+                  </div>
+                </div>
+              </div>
+              <h3>Mihika<br><span>Pune, INDIA</span></h3>
+            </div>
+            <div>
+              <span class="dot"><i class="fas fa-ellipsis-h"></i></span>
+            </div>
+          </div>
+          <div class="imgBx">
+            <img src="https://img.freepik.com/free-vector/inspirational-quote-watercolour-background_1048-18831.jpg?semt=ais_hybrid&w=740" alt="post-1" class="cover">
+          </div>
+          <div class="bottom">
+            <div class="actionBtns">
+              <div class="left">
+                <span class="heart" onclick="addlike()">
+                  <span>
+                    <svg aria-label="Like" color="#262626" fill="#262626" height="24" role="img" viewBox="0 0 48 48"
+                      width="24">
+                      <path
+                        d="M34.6 6.1c5.7 0 10.4 5.2 10.4 11.5 0 6.8-5.9 11-11.5 16S25 41.3 24 41.9c-1.1-.7-4.7-4-9.5-8.3-5.7-5-11.5-9.2-11.5-16C3 11.3 7.7 6.1 13.4 6.1c4.2 0 6.5 2 8.1 4.3 1.9 2.6 2.2 3.9 2.5 3.9.3 0 .6-1.3 2.5-3.9 1.6-2.3 3.9-4.3 8.1-4.3m0-3c-4.5 0-7.9 1.8-10.6 5.6-2.7-3.7-6.1-5.5-10.6-5.5C6 3.1 0 9.6 0 17.6c0 7.3 5.4 12 10.6 16.5.6.5 1.3 1.1 1.9 1.7l2.3 2c4.4 3.9 6.6 5.9 7.6 6.5.5.3 1.1.5 1.6.5.6 0 1.1-.2 1.6-.5 1-.6 2.8-2.2 7.8-6.8l2-1.8c.7-.6 1.3-1.2 2-1.7C42.7 29.6 48 25 48 17.6c0-8-6-14.5-13.4-14.5z">
+                      </path>
+                    </svg>
+                  </span>
+                </span>
+                <svg aria-label="Comment" class="_8-yf5 " color="#262626" fill="#262626" height="24" role="img"
+                  viewBox="0 0 48 48" width="24">
+                  <path clip-rule="evenodd"
+                    d="M47.5 46.1l-2.8-11c1.8-3.3 2.8-7.1 2.8-11.1C47.5 11 37 .5 24 .5S.5 11 .5 24 11 47.5 24 47.5c4 0 7.8-1 11.1-2.8l11 2.8c.8.2 1.6-.6 1.4-1.4zm-3-22.1c0 4-1 7-2.6 10-.2.4-.3.9-.2 1.4l2.1 8.4-8.3-2.1c-.5-.1-1-.1-1.4.2-1.8 1-5.2 2.6-10 2.6-11.4 0-20.6-9.2-20.6-20.5S12.7 3.5 24 3.5 44.5 12.7 44.5 24z"
+                    fill-rule="evenodd"></path>
+                </svg>
+                <svg aria-label="Share Post" class="_8-yf5 " color="#262626" fill="#262626" height="24" role="img"
+                  viewBox="0 0 48 48" width="24">
+                  <path
+                    d="M47.8 3.8c-.3-.5-.8-.8-1.3-.8h-45C.9 3.1.3 3.5.1 4S0 5.2.4 5.7l15.9 15.6 5.5 22.6c.1.6.6 1 1.2 1.1h.2c.5 0 1-.3 1.3-.7l23.2-39c.4-.4.4-1 .1-1.5zM5.2 6.1h35.5L18 18.7 5.2 6.1zm18.7 33.6l-4.4-18.4L42.4 8.6 23.9 39.7z">
+                  </path>
+                </svg>
+              </div>
+              <div class="right">
+                <svg aria-label="Save" class="_8-yf5 " color="#262626" fill="#262626" height="24" role="img"
+                  viewBox="0 0 48 48" width="24">
+                  <path
+                    d="M43.5 48c-.4 0-.8-.2-1.1-.4L24 29 5.6 47.6c-.4.4-1.1.6-1.6.3-.6-.2-1-.8-1-1.4v-45C3 .7 3.7 0 4.5 0h39c.8 0 1.5.7 1.5 1.5v45c0 .6-.4 1.2-.9 1.4-.2.1-.4.1-.6.1zM24 26c.8 0 1.6.3 2.2.9l15.8 16V3H6v39.9l15.8-16c.6-.6 1.4-.9 2.2-.9z">
+                  </path>
+                </svg>
+              </div>
+            </div>
+            <a href="#">
+              <p class="likes">3,684 likes</p>
+            </a>
+            <a href="#">
+              <p class="message"><b>Mihika</b> Belive in yourself! <span>#india</span>
+              </p>
+            </a>
+            <a href="#">
+              <h4 class="comments">View all 784 comments</h4>
+            </a>
+            <a href="#">
+              <h5 class="postTime">12 hours ago</h5>
+            </a>
+            <div class="addComments">
+              <div class="reaction">
+                <h3><i class="far fa-smile"></i></h3>
+              </div>
+              <input type="text" class="text" placeholder="Add a comeent...">
+              <a href="#">Post</a>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="top">
+            <div class="userDetails">
+              <div class="profilepic">
+                <div class="profile_img">
+                  <div class="image">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUY5zkCh8xC8CE6FttOdkBnRXucGFT5rl6Ug&s" alt="">
+                  </div>
+                </div>
+              </div>
+              <h3>kishan<br><span>Mumbai, India</span></h3>
+            </div>
+            <div>
+              <span class="dot"><i class="fas fa-ellipsis-h"></i></span>
+            </div>
+          </div>
+          <div class="imgBx">
+            <img src="https://www.shutterstock.com/image-vector/baby-krishna-sits-lotus-position-600nw-2466107905.jpg" alt="post-1" class="cover">
+          </div>
+          <div class="bottom">
+            <div class="actionBtns">
+              <div class="left">
+                <span class="heart" onclick="addlike()">
+                  <span>
+                    <svg aria-label="Like" color="#262626" fill="#262626" height="24" role="img" viewBox="0 0 48 48"
+                      width="24">
+                      <path
+                        d="M34.6 6.1c5.7 0 10.4 5.2 10.4 11.5 0 6.8-5.9 11-11.5 16S25 41.3 24 41.9c-1.1-.7-4.7-4-9.5-8.3-5.7-5-11.5-9.2-11.5-16C3 11.3 7.7 6.1 13.4 6.1c4.2 0 6.5 2 8.1 4.3 1.9 2.6 2.2 3.9 2.5 3.9.3 0 .6-1.3 2.5-3.9 1.6-2.3 3.9-4.3 8.1-4.3m0-3c-4.5 0-7.9 1.8-10.6 5.6-2.7-3.7-6.1-5.5-10.6-5.5C6 3.1 0 9.6 0 17.6c0 7.3 5.4 12 10.6 16.5.6.5 1.3 1.1 1.9 1.7l2.3 2c4.4 3.9 6.6 5.9 7.6 6.5.5.3 1.1.5 1.6.5.6 0 1.1-.2 1.6-.5 1-.6 2.8-2.2 7.8-6.8l2-1.8c.7-.6 1.3-1.2 2-1.7C42.7 29.6 48 25 48 17.6c0-8-6-14.5-13.4-14.5z">
+                      </path>
+                    </svg>
+                  </span>
+                </span>
+                <svg aria-label="Comment" class="_8-yf5 " color="#262626" fill="#262626" height="24" role="img"
+                  viewBox="0 0 48 48" width="24">
+                  <path clip-rule="evenodd"
+                    d="M47.5 46.1l-2.8-11c1.8-3.3 2.8-7.1 2.8-11.1C47.5 11 37 .5 24 .5S.5 11 .5 24 11 47.5 24 47.5c4 0 7.8-1 11.1-2.8l11 2.8c.8.2 1.6-.6 1.4-1.4zm-3-22.1c0 4-1 7-2.6 10-.2.4-.3.9-.2 1.4l2.1 8.4-8.3-2.1c-.5-.1-1-.1-1.4.2-1.8 1-5.2 2.6-10 2.6-11.4 0-20.6-9.2-20.6-20.5S12.7 3.5 24 3.5 44.5 12.7 44.5 24z"
+                    fill-rule="evenodd"></path>
+                </svg>
+                <svg aria-label="Share Post" class="_8-yf5 " color="#262626" fill="#262626" height="24" role="img"
+                  viewBox="0 0 48 48" width="24">
+                  <path
+                    d="M47.8 3.8c-.3-.5-.8-.8-1.3-.8h-45C.9 3.1.3 3.5.1 4S0 5.2.4 5.7l15.9 15.6 5.5 22.6c.1.6.6 1 1.2 1.1h.2c.5 0 1-.3 1.3-.7l23.2-39c.4-.4.4-1 .1-1.5zM5.2 6.1h35.5L18 18.7 5.2 6.1zm18.7 33.6l-4.4-18.4L42.4 8.6 23.9 39.7z">
+                  </path>
+                </svg>
+              </div>
+              <div class="right">
+                <svg aria-label="Save" class="_8-yf5 " color="#262626" fill="#262626" height="24" role="img"
+                  viewBox="0 0 48 48" width="24">
+                  <path
+                    d="M43.5 48c-.4 0-.8-.2-1.1-.4L24 29 5.6 47.6c-.4.4-1.1.6-1.6.3-.6-.2-1-.8-1-1.4v-45C3 .7 3.7 0 4.5 0h39c.8 0 1.5.7 1.5 1.5v45c0 .6-.4 1.2-.9 1.4-.2.1-.4.1-.6.1zM24 26c.8 0 1.6.3 2.2.9l15.8 16V3H6v39.9l15.8-16c.6-.6 1.4-.9 2.2-.9z">
+                  </path>
+                </svg>
+              </div>
+            </div>
+            <a href="#">
+              <p class="likes">1546 likes</p>
+            </a>
+            <a href="#">
+              <p class="message"><b>kishan</b> Krishna <span>#love</span> 
+              </p>
+            </a>
+            <a href="#">
+              <h4 class="comments">View all 1000 comments</h4>
+            </a>
+            <a href="#">
+              <h5 class="postTime">1 hours ago</h5>
+            </a>
+            <div class="addComments">
+              <div class="reaction">
+                <h3><i class="far fa-smile"></i></h3>
+              </div>
+              <input type="text" class="text" placeholder="Add a comeent...">
+              <a href="#">Post</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="card">
+          <h4>Suggestions For You</h4>
+          <div class="top">
+            <div class="userDetails">
+              <div class="profilepic">
+                <div class="profile_img">
+                  <div class="image">
+                    <img src="https://play-lh.googleusercontent.com/088OE5fzfG4F-JwMsPwIbJbEW61P0YxGYOw6oxEciLB-yKbVLM2VbW4j4AiRPep04gs" alt="">
+                  </div>
+                </div>
+              </div>
+              <h3>Anushka Sharma<br><span>Follows You</span></h3>
+            </div>
+            <div>
+              <a href="#" class="follow">follow</a>
+            </div>
+          </div>
+          <div class="top">
+            <div class="userDetails">
+              <div class="profilepic">
+                <div class="profile_img">
+                  <div class="image">
+                    <img src="https://cdni.iconscout.com/illustration/premium/thumb/virat-kohli-lowpoly-art-illustration-download-in-svg-png-gif-file-formats--people-illustrations-956464.png?f=webp" alt="">
+                  </div>
+                </div>
+              </div>
+              <h3>Virat Kohli<br><span>Follows You</span></h3>
+            </div>
+            <div>
+              <a href="#" class="follow">follow</a>
+            </div>
+          </div>
+          <div class="top">
+            <div class="userDetails">
+              <div class="profilepic">
+                <div class="profile_img">
+                  <div class="image">
+                    <img src="https://img.sixlogics.com/avatars/cricket/players/300x300/336.png" alt="">
+                  </div>
+                </div>
+              </div>
+              <h3>Rohit Sharma<br><span>Follows You</span></h3>
+            </div>
+            <div>
+              <a href="#" class="follow">follow</a>
+            </div>
+          </div>
+          <div class="top">
+            <div class="userDetails">
+              <div class="profilepic">
+                <div class="profile_img">
+                  <div class="image">
+                    <img src="https://w0.peakpx.com/wallpaper/535/634/HD-wallpaper-kartik-aaryan-anime-art-boat-boat-nirvana-boatnirvana-drwaing-earphones-headphones-kartikaaryan.jpg" alt="">
+                  </div>
+                </div>
+              </div>
+              <h3>Kartik Aaryan<br><span>Follows You</span></h3>
+            </div>
+            <div>
+              <a href="#" class="follow">follow</a>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+  </main>
+</body>
+  <style>
+        .feature-box {
+            max-width: 300px;
+            background-color: #f0f8ff;
+            padding: 20px;
+            border-left: 4px solid #3897f0;
+            border-radius: 8px;
+        }
+
+        .feature-box h3 {
+            color: #3897f0;
+            margin-bottom: 10px;
+        }
+
+        .feature-box p {
+            color: #333;
+        }
+
+        .feature-box a {
+            color: #3897f0;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        
+        <div class="feature-box">
+            <h3>✨ New Feature: AI Caption Generator</h3>
+            <p>Struggling with captions? Let AI do the thinking for you! Generate smart, stylish captions for your photos in seconds.</p>
+            <p><a href="#">Try it now</a></p>
+        </div>
+    </div>
+</body>
+</html>
